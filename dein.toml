@@ -1,0 +1,76 @@
+#rquired:
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'leico/autodate.vim'
+
+[[plugins]]
+repo='scrooloose/nerdtree'
+
+#ステータスラインのテーマ
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+
+#ステータスラインのテーマ
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo='freeo/vim-kalisi'
+
+#tex系
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+
+[[plugins]]
+repo="Shougo/denite.nvim"
+
+[[plugins]]
+repo="thinca/vim-quickrun"
+
+#[[plugins]]
+#repo="davidhalter/jedi-vim"
+
+[[plugins]]
+repo="Lokaltog/vim-powerline"
+
+[[plugins]]
+repo="w0rp/ale"
+
+[[plugins]]
+repo="raphamorim/lucario"
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+	let g:lightline = {
+		\ 'colorscheme': 'wombat',
+		\ 'active': {
+			\ 'left': [ ['mode', 'paste'], ['readonly', 'filepath', 'modified'] ]
+				\ },
+		\ 'component_function':{
+			\ 'filepath': 'FilePath'
+				\ }
+		\ }
+ 
+	function! FilePath()
+		if winwidth(0) > 90
+			return expand("%:s")
+		else
+			return expand("%:t")
+		endif
+	endfunction
+ 
+	" # show statusbar
+	set laststatus=2
+	" # hide --INSERT--
+	set noshowmode
+'''
+[[plugins]]
+repo='mattn/emmet-vim'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
